@@ -1,16 +1,18 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import { Footer } from '../components/Footer/Footer';
+import { Header } from '../components/Header/Header';
 import styles from './Layout.module.scss';
 
 export const Layout = () => {
   return (
     <div className={styles.wrapper}>
-      <header style={{ height: '3rem' }}>Header</header>
-      <main style={{ height: 'calc(100vh - 6rem)' }}>
+      <Header />
+      <main>
         <Outlet />
       </main>
 
-      <footer style={{ height: '3rem' }}>Footer</footer>
+      <Footer />
     </div>
   );
 };

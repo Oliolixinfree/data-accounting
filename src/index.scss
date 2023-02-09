@@ -60,10 +60,10 @@ select {
 body {
   font-family: 'Ubuntu Mono', sans-serif;
   background-color: var(--bg-color);
-  color: var(--font-color);
+  color: var(--text-color);
 }
 
 :root {
   --bg-color: #282828;
-  --font-color: #dfee06;
+  --text-color: #dfee06;
 }
