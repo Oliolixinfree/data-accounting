@@ -4,6 +4,8 @@ import { setUser } from '../../store/slices/userSlice';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { FormRegistration } from '../Form/FormRegistration';
+import { addDoc, collection } from 'firebase/firestore';
+import { db } from '../../firebase';
 
 export const SingUp = () => {
   const navigate = useNavigate();
@@ -12,13 +14,15 @@ export const SingUp = () => {
   const handleRegister = async (formData) => {
     const { name, email, password } = formData;
     const auth = getAuth();
-    console.log('name', name);
+    const registeredUsers = collection(db, 'users');
+    // console.log('name', name);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userAuth) => {
         updateProfile(userAuth.user, {
           displayName: name,
         })
           .then(
+            addDoc(registeredUsers, { name, email }),
             dispatch(
               setUser({
                 email: userAuth.user.email,

@@ -10,6 +10,7 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
+      <button>MENU</button>
       <section className={styles.logo}>
         <Link to="/">
           <Logo />
