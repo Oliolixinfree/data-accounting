@@ -5,12 +5,15 @@ import { useAuth } from '../../hooks/useAuth';
 import { removeUser } from '../../store/slices/userSlice';
 
 export const HomePage = () => {
-  const { isAuth, email } = useAuth();
+  const { isAuth, email, displayName } = useAuth();
   const dispatch = useDispatch();
 
   return isAuth ? (
     <>
-      welcome <button onClick={() => dispatch(removeUser())}>Log out {email}</button>
+      welcome
+      <button onClick={() => dispatch(removeUser())}>
+        Log out {email} {displayName}
+      </button>
     </>
   ) : (
     <Navigate to="/login" replace />
