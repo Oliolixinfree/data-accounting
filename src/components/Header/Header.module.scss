@@ -1,3 +1,49 @@
+.menuBtn {
+  background-color: transparent;
+  border: none;
+  width: 45px;
+  height: 40px;
+  cursor: pointer;
+
+  .line {
+    height: 5px;
+    width: 100%;
+    background-color: var(--text-color);
+    display: block;
+    border-radius: 5px;
+    transition: 0.3s ease;
+  }
+
+  .line:nth-child(1) {
+    transform: translateY(-4px);
+  }
+  .line:nth-child(2) {
+    transition: transform 0.2s ease-in-out;
+  }
+  .line:nth-child(3) {
+    transform: translateY(4px);
+  }
+
+  .closeBtn {
+    height: 5px;
+    width: 100%;
+    background-color: var(--text-color);
+    display: block;
+    border-radius: 5px;
+    transition: 0.3s ease;
+    display: block;
+  }
+  .closeBtn:nth-child(1) {
+    transform: translateY(4px) rotateZ(-45deg);
+  }
+  .closeBtn:nth-child(2) {
+    opacity: 0;
+  }
+  .closeBtn:nth-child(3) {
+    transform: translateY(-6px) rotateZ(45deg);
+  }
+}
+
 .header {
   display: grid;
   grid-template-columns: auto auto auto;
