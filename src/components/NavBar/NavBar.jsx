@@ -20,7 +20,10 @@ export const NavBar = () => {
         <NavLink to="/" onClick={() => dispatch(toggleMenu(isOpen))}>
           <h2>Home</h2>
         </NavLink>
-        <NavLink>
+        <NavLink to="/inventory" onClick={() => dispatch(toggleMenu(isOpen))}>
+          <h2>Inventory</h2>
+        </NavLink>
+        <NavLink to="/admin_panel" onClick={() => dispatch(toggleMenu(isOpen))}>
           <h2>Admin Panel</h2>
         </NavLink>
       </section>

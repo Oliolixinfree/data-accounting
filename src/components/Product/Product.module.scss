@@ -1,0 +1,14 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  gap: 1rem;
+  justify-content: start;
+
+  .name {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+}
+.error {
+  background-color: red;
+}
